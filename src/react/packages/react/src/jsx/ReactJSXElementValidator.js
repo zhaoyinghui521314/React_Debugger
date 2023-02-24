@@ -310,6 +310,8 @@ export function jsxWithValidation(
   source,
   self
 ) {
+  // 1. 传入jsx的身份信息去jsxWithValidation验证/
+  console.log("jsx entry:", __DEV__, type, props, key);
   if (__DEV__) {
     const validType = isValidElementType(type);
 
@@ -357,6 +359,7 @@ export function jsxWithValidation(
       );
     }
 
+    // 2. 通过jsxDev来生成element元素
     const element = jsxDEV(type, props, key, source, self);
 
     // The result can be nullish if a mock or a custom function is used.

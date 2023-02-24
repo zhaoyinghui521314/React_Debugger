@@ -344,7 +344,7 @@ export function jsxDEV(type, config, maybeKey, source, self) {
         defineRefPropWarningGetter(props, displayName);
       }
     }
-
+    // 3. 返回ReactElement对象
     return ReactElement(
       type,
       key,
